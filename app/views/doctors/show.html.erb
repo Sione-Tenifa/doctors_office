@@ -1,0 +1,19 @@
+<div class="ui card">
+  <div class="content">
+    <p class="header">
+      <%= @doctor.last_name %>
+    </p>
+    <%= link_to 'Appointment', doctor_appointments_path(@doctor), class: "ui primary button inverted" %>
+
+  </div>
+   <div class="extra content">
+  <ul>
+  <% @doctor.users.each do |user| %>
+    <li><%= link_to user.first_name, [@doctor, user] %></li>
+  <% end %>
+</ul>
+     
+    <%= link_to 'Back', doctors_path %>
+  </div>
+</div>
+<%= link_to 'Delete Doctor', @doctor, method: :delete, class: "ui red button inverted" %>

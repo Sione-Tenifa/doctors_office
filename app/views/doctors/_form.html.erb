@@ -1,0 +1,10 @@
+<h1><%= @doctor.id ? 'Edit Doctor' : 'Create Doctor' %></h1>
+<hr />
+<%= form_with(model: [@appointment, @doctor], local: true, class: "ui form") do |f| %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, required: true, autofocus: true %>
+ 
+  <br />
+  <br />
+  <%= f.submit nil, class: "ui inverted orange button" %>
+<% end %>
